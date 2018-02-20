@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../css/Home'
+import styles from './styles'
 
 const Home = () => (
   <div className={styles.home}>

@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import Player from './Player'
-import styles from '../css/Video'
+import Player from './components/Player'
+import styles from './styles'
 
 const Video = ({ slug, title, youtubeId, category, by, color, tip }) => (
   <div className={styles.video}>
