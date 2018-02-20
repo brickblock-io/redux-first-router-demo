@@ -2,11 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Link from 'redux-first-router-link'
 
-import styles from '../css/Video'
+import styles from '../../styles'
 
-const Player = ({ playing, youtubeId, slug, color }) =>
-  !playing
-    ? <div
+const Player = ({
+  playing, youtubeId, slug, color
+}) =>
+  !playing ? (
+    <div
       className={styles.heroContainer}
       style={{ backgroundImage: youtubeBackground(youtubeId) }}
     >
@@ -14,12 +16,14 @@ const Player = ({ playing, youtubeId, slug, color }) =>
         <span className='ion-play' style={{ backgroundColor: color }} />
       </Link>
     </div>
-    : <iframe
+  ) : (
+    <iframe
       className={styles.iframe}
       frameBorder='0'
       allowFullScreen
       src={youtubeIframeSrc(youtubeId)}
     />
+  )
 
 const youtubeBackground = youtubeId =>
   `url(https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg)`
